@@ -4,7 +4,6 @@ import { IndexLink} from 'react-router';
 
 class MainTemplate extends React.Component{
          componentDidMount(){
-             console.log('test');
              animate();
         }
         render(){
@@ -27,9 +26,9 @@ class MainTemplate extends React.Component{
                                 </ul>
                             </nav>
                         </header>
-                        <section>
+
                             {this.props.children}
-                        </section>
+
                         <footer>
                         </footer>
                 </div>

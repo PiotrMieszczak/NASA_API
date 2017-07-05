@@ -11,7 +11,7 @@ module.exports = {
         filename: '[name]'
     },
     watch: true,
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     module: {
         loaders: [
             {

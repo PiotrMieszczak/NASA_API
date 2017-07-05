@@ -202,13 +202,29 @@ canvas {
   z-index: -9999; }
 
 header, footer {
-  height: 10vh; }
+  height: 10vh;
+  z-index: 1; }
 
-section {
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0; }
+
+section#home {
   height: 80vh;
   z-index: 9999;
-  background-color: gray;
-  opacity: 0.4; }
+  display: flex; }
+
+section#home div {
+  background-image: url("/src/images/nasalogo.png");
+  background-repeat: no-repeat;
+  border: 1px solid red;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  color: white;
+  margin: auto; }
 
 nav {
   float: right;
@@ -229,3 +245,5 @@ nav ul {
   text-decoration: none;
   text-transform: uppercase;
   color: white; }
+
+/*# sourceMappingURL=main.css.map*/

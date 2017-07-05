@@ -8,15 +8,16 @@ import { Router,
     hashHistory
 } from 'react-router';
 import MainTemplate from './MainTemplate.jsx';
+import Home from './Home.jsx';
 
 document.addEventListener('DOMContentLoaded', function(){
 
     class App extends React.Component{
         render(){
-            console.log(window.innerWidth);
+
             return <Router history={hashHistory}>
                 <Route path="/" component={MainTemplate}>
-                {/*<IndexRoute patch="/" component={Home}/>*/}
+                <IndexRoute component={Home}/>
                 </Route>
             </Router>
 
