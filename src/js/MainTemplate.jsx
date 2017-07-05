@@ -4,6 +4,7 @@ import { IndexLink} from 'react-router';
 
 class MainTemplate extends React.Component{
          componentDidMount(){
+             console.log('test');
              animate();
         }
         render(){
@@ -31,7 +32,6 @@ class MainTemplate extends React.Component{
                         </section>
                         <footer>
                         </footer>
-                        <canvas></canvas>
                 </div>
 
         }
