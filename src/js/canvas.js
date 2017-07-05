@@ -28,3 +28,20 @@ class Star{
     }
 }
 
+function CreateStars(){
+    let StarArray = []
+
+    for(let i =0; i < 100;i++){
+        let radius = Math.random()*10+1;
+
+        let x = (Math.random()+ radius)*window.innerWidth;
+        let y = (Math.random()+ radius)*window.innerHeight;
+        let dx = Math.random()
+        let dy = Math.random()
+        StarArray.push(new Star(x,y,dx,dy,radius))
+    }
+
+    console.log(StarArray);
+}
+
+CreateStars();
