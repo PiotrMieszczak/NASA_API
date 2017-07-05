@@ -1,3 +1,20 @@
+@import 'reset';
+
 canvas{
     background-color: black;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: -9999;
+}
+
+header, footer{
+    height: 15vh;
+}
+
+section{
+    height: 70vh;
+    z-index: 9999;
+    background-color:gray;
+    opacity: 0.6;
 }
