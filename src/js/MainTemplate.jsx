@@ -3,24 +3,28 @@ import {animate} from './animate.js';
 import { IndexLink} from 'react-router';
 
 class MainTemplate extends React.Component{
-
-        componentDidMount(){
-            console.log('zaladowany');
-            animate();
+        
+  
+         componentDidMount(){
+             animate();
         }
+
         render(){
             return <div> 
-                        <header>
+                        <header className="clearfix">
                             <nav>
-                                <ul>
+                                <ul id="navigation">
                                     <li>
                                         <IndexLink to="/">Home</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/">Mars Rover Gallery</IndexLink>
+                                        <IndexLink to="/mars">Rover Gallery</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/">Główna</IndexLink>
+                                        <IndexLink to="/earth">EPIC gallery</IndexLink>
+                                    </li>
+                                    <li>
+                                        <IndexLink to="/earth">tnyt space news</IndexLink>
                                     </li>
                                 </ul>
                             </nav>

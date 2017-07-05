@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
         render(){
             return <Router history={hashHistory}>
                 <Route path="/" component={MainTemplate}>
-                
+                {/*<IndexRoute patch="/" component={Home}/>*/}
                 </Route>
             </Router>
 
