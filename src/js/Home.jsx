@@ -20,6 +20,14 @@ class Home extends React.Component{
         });
     }
 
+    handleChangeBg=(e)=>{
+            const section = document.querySelector('#home');
+            const bgUrl = `url(${this.state.picOfDay})`;
+            section.style.backgroundImage = `${bgUrl}`;
+
+            e.target.style.display= 'none'; //hide button
+    }   
+
     componentDidMount(){
          const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
          const url = 'https://api.nasa.gov/planetary/apod?api_key='+keyAPI;
@@ -30,11 +38,8 @@ class Home extends React.Component{
         if(!this.state.loaded){
             return null;
         }else{
-
-            const bgUrl = `url(${this.state.picOfDay})`;
-            console.log(typeof bgUrl);
         return <section id="home" >
-                <img
+                <img onClick={this.handleChangeBg}
                 src="images/NASA_logo.svg" alt="nasa_logo"/>
             </section>
         }
