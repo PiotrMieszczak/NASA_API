@@ -3,12 +3,9 @@ import {animate} from './animate.js';
 import { IndexLink} from 'react-router';
 
 class MainTemplate extends React.Component{
-        
-  
          componentDidMount(){
              animate();
         }
-
         render(){
             return <div> 
                         <header className="clearfix">
@@ -24,7 +21,7 @@ class MainTemplate extends React.Component{
                                         <IndexLink to="/earth">EPIC gallery</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/earth">tnyt space news</IndexLink>
+                                        <IndexLink to="/tnyt">tnyt space news</IndexLink>
                                     </li>
                                 </ul>
                             </nav>

@@ -202,10 +202,30 @@ canvas {
   z-index: -9999; }
 
 header, footer {
-  height: 15vh; }
+  height: 10vh; }
 
 section {
-  height: 65vh;
+  height: 80vh;
   z-index: 9999;
   background-color: gray;
-  opacity: 0.6; }
+  opacity: 0.4; }
+
+nav {
+  float: right;
+  width: 50vw; }
+
+nav ul {
+  display: flex;
+  align-content: flex-end; }
+
+#navigation li {
+  margin-right: 1vw; }
+
+#navigation li:last-of-type {
+  margin-right: 0; }
+
+#navigation a {
+  font-size: 3vh;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white; }

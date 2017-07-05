@@ -56,6 +56,6 @@ function CreateStars(number){
     
 }   
 
-let stars = CreateStars(200);
+let stars = CreateStars(250);
 
 export {stars};
