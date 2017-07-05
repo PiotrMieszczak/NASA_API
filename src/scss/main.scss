@@ -26,7 +26,22 @@ section#home{
     justify-content: center;
     align-items: center;
     margin: 0;
+    opacity: 0.9;
+}
 
+//pulse animation of main img
+@keyframes pulse {
+	0% { transform: scale(1); }
+	30% { transform: scale(1.05); }
+	50% { transform: scale(1); }
+	70% { transform: scale(1.05); }
+	100% { transform: scale(1); }
+}
+#home img{
+    animation-name: pulse;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+	animation-timing-function: linear;
 }
 
 //NAV

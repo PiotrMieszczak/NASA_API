@@ -9,6 +9,25 @@ class Home extends React.Component{
             }
     }
 
+    randomDate(start, end){
+        end = new Date(
+            start.getTime() + Math.random() * (end.getTime() - start.getTime())
+        );
+        let year = end.getUTCFullYear().toString();
+
+        function getMonth(objEnd){
+             let _month = objEnd.getUTCMonth()+1; //getUTCMonth return 0-11 ;
+             if(_month < 10 ){
+               return '0'+_month; //return string 09
+             }else{
+               return _month.toString(); //return string;
+             }
+        }
+        let month = getMonth(end);
+        let day = end.getUTCDate().toString();
+        return `${year}-${month}-${day}`;
+    }
+
     getData(url){
          fetch(url)
             .then( r => r.json() )
@@ -16,7 +35,7 @@ class Home extends React.Component{
                 this.setState({
                     loaded: true,
                     picOfDay: response.hdurl,
-                })
+            })
         });
     }
 
@@ -24,13 +43,13 @@ class Home extends React.Component{
             const section = document.querySelector('#home');
             const bgUrl = `url(${this.state.picOfDay})`;
             section.style.backgroundImage = `${bgUrl}`;
-
             e.target.style.display= 'none'; //hide button
     }   
 
     componentDidMount(){
+         let date = this.randomDate(new Date(2015,8,30), new Date());
          const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
-         const url = 'https://api.nasa.gov/planetary/apod?api_key='+keyAPI;
+         const url = 'https://api.nasa.gov/planetary/apod?api_key='+keyAPI+`&date=${date}`;
          this.getData(url);
     }
     

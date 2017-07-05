@@ -7,7 +7,6 @@ var colorArray = [
     "#EBD464",
     "#FFD970",
 ];
-
 class Star{
     constructor(x,y,dx,dy,radius){
         this.x = x;
@@ -51,11 +50,8 @@ function CreateStars(number){
         
         StarArray.push(new Star(x,y,dx,dy,radius))
     }
-
-    return StarArray;
-    
+    return StarArray; 
 }   
-
 let stars = CreateStars(250);
 
 export {stars};
