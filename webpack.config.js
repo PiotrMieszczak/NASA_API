@@ -3,7 +3,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        'dist/app.js': ['whatwg-fetch', './src/js/canvas.js'],
+        'dist/app.js': ['whatwg-fetch', './src/js/app.jsx'],
         'dist/main.css~': './src/scss/main.scss'
     },
     output : {

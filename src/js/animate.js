@@ -1,5 +1,5 @@
 import {ctx} from './canvas_setup.js';
-import {stars} from './Star.js';
+import {stars} from './star.js';
 
 console.log(stars);
 
