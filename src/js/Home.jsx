@@ -1,6 +1,8 @@
 import React from 'react';
 // import {randomDate} from './randomDate.js';
 import Fullscreen from './Fullscreen.jsx';
+import Spinner from './Spinner.jsx';
+
 class Home extends React.Component{
     constructor(props){
         super(props);
@@ -27,6 +29,8 @@ class Home extends React.Component{
         });
     }
     componentDidMount(){ //get pictures from NASA API
+        console.log(this.state.loaded);
+        
         const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
         let datesArray = []; //get 6 random dates for gallery
         let urlsArray = []; //get 6 diffrent urls
@@ -35,9 +39,8 @@ class Home extends React.Component{
             datesArray.push(date);
             let url = 'https://api.nasa.gov/planetary/apod?api_key='+keyAPI+`&date=${date}`;
             this.getData(url);
-        }
+            }
     }
-
     //EVENTS
     handleChangeBg=(e)=>{
             // e.target.style.display= 'none'; //hide button
@@ -73,7 +76,7 @@ class Home extends React.Component{
         })
 
         if(!this.state.loaded){ //if didn't get response from NASA API, don't render anything
-            return null;
+            return <Spinner />
         }else{
 
         return <section id="home" >
