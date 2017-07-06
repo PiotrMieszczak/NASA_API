@@ -43,13 +43,6 @@ class Home extends React.Component{
         });
     }
 
-    handleChangeBg=(e)=>{
-            e.target.style.display= 'none'; //hide button
-            const nasaGallery = document.querySelector('.nasaGallery');
-            nasaGallery.style.display ='flex'
-
-    }   
-
     componentDidMount(){
         const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
 
@@ -62,17 +55,34 @@ class Home extends React.Component{
             this.getData(url);
         }
     }
-    
+
+    //EVENTS
+    handleChangeBg=(e)=>{
+            e.target.style.display= 'none'; //hide button
+            const nasaGallery = document.querySelector('.nasaGallery');
+            nasaGallery.style.display ='flex'
+    }   
+
+   
+    handleFullscreen=(src)=>{
+        console.log('test');
+          const newDiv = document.createElement('div');
+          const sectionHome = document.querySelector('#home')
+          const nasaGallery = document.querySelector('.nasaGallery')
+          nasaGallery.style.display ='none'
+          newDiv.innerHTML = '<div class="fullScreen"><img src="'+src+'"></div>';
+          sectionHome.appendChild(newDiv);
+
+    }
     render(){
 
         const galleryAPOD = [...this.state.response].map( (singleResponse)=>{
             return <li key={singleResponse.date}>
-                        <img src={singleResponse.url} alt="">
-                        </img>
+                        <img 
+                        onClick={e=>this.handleFullscreen(singleResponse.url)}src={singleResponse.url} alt="random_nasaPic"/>
                     </li>
         })
 
-        console.log(this.state.loaded);
         if(!this.state.loaded){
             return null;
         }else{

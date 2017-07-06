@@ -60,6 +60,20 @@ section#home{
     }
 }
 
+.fullScreen{
+    height: 80vh;
+    width:100vw;
+    z-index: 999999;
+    margin: 0 auto;
+    background-color: rgba(0%, 0%, 0%, 0.4)
+    
+}
+.fullScreen img {
+    display: block;
+    margin: 0 auto;
+    width: 90vw;
+    height: 80vh;
+}
 //NAV
 nav{
     float: right;

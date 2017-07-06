@@ -78,7 +78,7 @@ function CreateStars(number){
     return StarArray; 
 }   
 
-let stars = CreateStars(500);
+let stars = CreateStars(800);
 export {stars};
 
 
