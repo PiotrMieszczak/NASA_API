@@ -1,0 +1,31 @@
+.nasaGallery{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+
+
+    img{
+        width: 30vw;
+        height: 40vh;
+        border-radius: 10%;
+    }
+    span{
+        color: white;
+    }
+}
+
+.fullScreen{
+    height: 80vh;
+    width:100vw;
+    z-index: 999999;
+    margin: 0 auto;
+    background-color: rgba(0%, 0%, 0%, 0.4)
+    
+}
+.fullScreen img {
+    display: block;
+    margin: 0 auto;
+    width: 90vw;
+    height: 80vh;
+    border-radius: 10%;
+}

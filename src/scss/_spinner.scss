@@ -1,0 +1,106 @@
+.main_spinner{
+    position: relative;
+    left: calc(50vw - 200px);
+    top: calc(50vh - 200px);
+    width: 200px;
+    height: 200px;
+    border: 2px solid transparent;
+    border-left-color: blue;
+    border-right-color: blue;
+    border-radius: 50%;
+
+    animation: pulse_spinner 2s infinite backwards, rotate 2s infinite;
+
+    .secondary_spinner{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top:-2px;
+        left:-2px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: red;
+        border-bottom-color: red;
+        animation: pulse_spinner 2s infinite backwards;
+    }
+}
+
+.third_spinner{
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 2px;
+    left: 3px;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    animation: rotate 1s infinite;
+}
+
+.dot1{
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    top: 50px;
+    left: 50px;
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 50%;
+
+    animation: bounce 2s infinite;
+}
+.dot2{
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    top: 50px;
+    left: 70px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: black;
+    
+    animation: bounce 2s infinite;
+    animation-delay: -1s;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes bounce{
+    0%{
+        transform: scale(0.0);
+    } 
+    50%{
+        transform: scale(1.0);
+    }
+    100% { 
+        transform: scale(0.0);
+    }
+}
+@keyframes pulse_spinner{
+      0%{
+        transform: scale(1) 
+    }
+    10%{
+        transform: scale(1.1) 
+    }
+    25%{
+        transform: scale(1.05)
+    }
+    50%{
+        transform: scale(1) 
+    }
+    75%{
+        transform: scale(0.9)
+    }
+    100%{
+        transform: scale(1)
+    }
+}

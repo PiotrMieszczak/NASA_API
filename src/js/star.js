@@ -15,7 +15,7 @@ const colorStrokeArray = [
     "#F2EDF1"
 ];
 
-const maxRadius = 4;
+const maxRadius = 5;
 const minRadius = 2;
 let mouse={
     x: undefined,
@@ -55,8 +55,8 @@ class Star{
         }
         this.y += this.dy/2;
         //interactivity with mouse - every particle in distance of 30px gets bigger
-         if(mouse.x - this.x < 30 && mouse.x - this.x > -30
-         && mouse.y - this.y < 30 && mouse.y - this.y > -30){
+         if(mouse.x - this.x < 50 && mouse.x - this.x > -50
+         && mouse.y - this.y < 50 && mouse.y - this.y > -50){
             if(this.radius < maxRadius){
                 this.radius += 0.5;}
             }else if(this.radius > minRadius){
@@ -78,7 +78,7 @@ function CreateStars(number){
     return StarArray; 
 }   
 
-let stars = CreateStars(800);
+let stars = CreateStars(1000);
 export {stars};
 
 

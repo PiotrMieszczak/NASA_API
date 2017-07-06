@@ -26,9 +26,8 @@ class Home extends React.Component{
             })
         });
     }
-    componentDidMount(){
+    componentDidMount(){ //get pictures from NASA API
         const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
-
         let datesArray = []; //get 6 random dates for gallery
         let urlsArray = []; //get 6 diffrent urls
         for(let i =0;i < 6;i++){

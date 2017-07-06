@@ -1,0 +1,23 @@
+nav{
+    float: right;
+    width: 50vw;
+    ul{
+        display: flex;
+        align-content: flex-end;
+    }
+}
+
+#navigation{
+    li{
+        margin-right: 1vw;
+    }
+    li:last-of-type{
+        margin-right: 0;
+    }  
+    a{
+        font-size: 3vh;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+    }     
+}
