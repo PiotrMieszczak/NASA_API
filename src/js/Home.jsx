@@ -1,11 +1,12 @@
 import React from 'react';
+// import {randomDate} from './randomDate.js';
 
 class Home extends React.Component{
     constructor(props){
         super(props);
             this.state={
-                picOfDay: '',
                 loaded: false,
+                response: [],
             }
     }
 
@@ -28,38 +29,61 @@ class Home extends React.Component{
         return `${year}-${month}-${day}`;
     }
 
-    getData(url){
+    getData(url){ //get response from NASA API - APOD (pic of the day)
+        
          fetch(url)
             .then( r => r.json() )
             .then( response => {
+                let newResponseArray = this.state.response.slice();
+                newResponseArray.push(response);
                 this.setState({
                     loaded: true,
-                    picOfDay: response.hdurl,
+                    response: newResponseArray,
             })
         });
     }
 
     handleChangeBg=(e)=>{
-            const section = document.querySelector('#home');
-            const bgUrl = `url(${this.state.picOfDay})`;
-            section.style.backgroundImage = `${bgUrl}`;
             e.target.style.display= 'none'; //hide button
+            const nasaGallery = document.querySelector('.nasaGallery');
+            nasaGallery.style.display ='flex'
+
     }   
 
     componentDidMount(){
-         let date = this.randomDate(new Date(2015,8,30), new Date());
-         const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
-         const url = 'https://api.nasa.gov/planetary/apod?api_key='+keyAPI+`&date=${date}`;
-         this.getData(url);
+        const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
+
+        let datesArray = []; //get 6 random dates for gallery
+        let urlsArray = []; //get 6 diffrent urls
+        for(let i =0;i < 6;i++){
+            let date = this.randomDate(new Date(2015,8,30), new Date());
+            datesArray.push(date);
+            let url = 'https://api.nasa.gov/planetary/apod?api_key='+keyAPI+`&date=${date}`;
+            this.getData(url);
+        }
     }
     
     render(){
+
+        const galleryAPOD = [...this.state.response].map( (singleResponse)=>{
+            return <li key={singleResponse.date}>
+                        <img src={singleResponse.url} alt="">
+                        </img>
+                    </li>
+        })
+
+        console.log(this.state.loaded);
         if(!this.state.loaded){
             return null;
         }else{
+
         return <section id="home" >
-                <img onClick={this.handleChangeBg}
+                <img id="nasaLogo"
+                onClick={this.handleChangeBg}
                 src="images/NASA_logo.svg" alt="nasa_logo"/>
+                <ul className="nasaGallery">
+                    {galleryAPOD}
+                </ul> 
             </section>
         }
     }

@@ -25,6 +25,7 @@ window.addEventListener('mousemove', (e)=>{ //getting mouse coordinates
     mouse.x = e.x;
     mouse.y = e.y
 })
+
 class Star{
     constructor(x,y,dx,dy,radius){
         this.x = x;
@@ -41,9 +42,10 @@ class Star{
         ctx.fill();
         ctx.strokeStyle = this.styleColor;
         ctx.stroke();
-       
     }
     move(){ //update x/y possition on new framerate 
+
+        //bouce from the edges
         if(this.x > window.innerWidth || this.x < 0){
             this.dx = -this.dx
         }
@@ -52,6 +54,7 @@ class Star{
             this.dx = -this.dx
         }
         this.y += this.dy/2;
+        //interactivity with mouse - every particle in distance of 30px gets bigger
          if(mouse.x - this.x < 30 && mouse.x - this.x > -30
          && mouse.y - this.y < 30 && mouse.y - this.y > -30){
             if(this.radius < maxRadius){
@@ -75,7 +78,7 @@ function CreateStars(number){
     return StarArray; 
 }   
 
-let stars = CreateStars(1500);
+let stars = CreateStars(500);
 export {stars};
 
 

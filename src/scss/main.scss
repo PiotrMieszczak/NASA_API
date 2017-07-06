@@ -18,16 +18,6 @@ footer{
     bottom:0;
 }
 
-section#home{
-    height: 80vh;
-    width:100vw;
-    z-index: 9999;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    opacity: 0.9;
-}
 
 //pulse animation of main img
 @keyframes pulse {
@@ -37,32 +27,61 @@ section#home{
 	70% { transform: scale(1.05); }
 	100% { transform: scale(1); }
 }
-#home img{
+section#home{
+    height: 80vh;
+    width:100vw;
+    z-index: 9999;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+     #nasaLogo{
     animation-name: pulse;
     animation-duration: 4000ms;
     animation-iteration-count: infinite;
 	animation-timing-function: linear;
+    }
+}
+
+
+//Nasa APOD Gallery 
+.nasaGallery{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: none;
+
+    img{
+        width: 30vw;
+        height: 40vh;
+    }
+    span{
+        color: white;
+    }
 }
 
 //NAV
 nav{
     float: right;
     width: 50vw;
-}
-nav ul{
-    display: flex;
-    align-content: flex-end;
+    ul{
+        display: flex;
+        align-content: flex-end;
+    }
 }
 
-#navigation li{
-    margin-right: 1vw;
+#navigation{
+    li{
+        margin-right: 1vw;
+    }
+    li:last-of-type{
+        margin-right: 0;
+    }  
+    a{
+        font-size: 3vh;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+    }     
 }
-#navigation li:last-of-type{
-    margin-right: 0;
-}
-#navigation a{
-    font-size: 3vh;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-}
+
