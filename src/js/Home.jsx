@@ -8,7 +8,7 @@ class Home extends React.Component{
                 loaded: false,
                 response: [],
                 src: false,
-                visible: false,
+                fullscreenVisible: false,
                 intro: true,
             }
     }
@@ -53,7 +53,7 @@ class Home extends React.Component{
     handleFullscreen=(src)=>{ //display clicked photo in fullscreen
         this.setState({
             src: src,
-            visible: true,
+            fullscreenVisible: true,
         })
           
 
@@ -61,7 +61,7 @@ class Home extends React.Component{
     handleCloseFullscreen = ()=>{
         this.setState({
             src: false,
-            visible: false,
+            fullscreenVisible: false,
         })
     }
     render(){
@@ -81,12 +81,12 @@ class Home extends React.Component{
                 <img id="nasaLogo"  className={!this.state.intro && 'hidden'}
                 onClick={this.handleChangeBg}
                 src="images/NASA_logo.svg" alt="nasa_logo"/>
-                <ul className={(!this.state.visible && !this.state.intro)?'nasaGallery':'hidden'}>
+                <ul className={(!this.state.fullscreenVisible && !this.state.intro)?'nasaGallery':'hidden'}>
                     {galleryAPOD}
                 </ul> 
                 <Fullscreen 
                 hide={this.handleCloseFullscreen}
-                src={this.state.src} visible={this.state.visible}/>
+                src={this.state.src} visible={this.state.fullscreenVisible}/>
             </section>
         }
     }
