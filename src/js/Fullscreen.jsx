@@ -8,6 +8,11 @@ class Fullscreen extends React.Component{
             this.props.hide();
         }
     }
+    forceUpdateBtn = ()=>{
+        if(typeof this.props.forceUpdate ==='function'){
+            this.props.forceUpdate();
+        }
+    }
     render(){
 
         return <div className={this.props.visible?'fullScreen':'hidden'}>
@@ -16,6 +21,8 @@ class Fullscreen extends React.Component{
                 onClick={this.checkFullscreen}
                 src={this.props.src}/>
             }
+            <button
+            onClick={this.forceUpdateBtn}>ZAMKNIJ</button>
         </div>
     }
 }

@@ -29,11 +29,6 @@ class Home extends React.Component{
         });
     }
 
-    componentWillMount(){
-        this.setState({
-            intro: true,
-        })
-    }
     componentDidMount(){ //get pictures from NASA API
 
         const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
@@ -55,15 +50,11 @@ class Home extends React.Component{
                 intro: false,
             })
     }   
-
-   
     handleFullscreen=(src)=>{ //display clicked photo in fullscreen
         this.setState({
             src: src,
             fullscreenVisible: true,
         })
-          
-
     }
     handleCloseFullscreen = ()=>{
         this.setState({
@@ -93,7 +84,9 @@ class Home extends React.Component{
                 </ul> 
                 <Fullscreen 
                 hide={this.handleCloseFullscreen}
-                src={this.state.src} visible={this.state.fullscreenVisible}/>
+                src={this.state.src} 
+                visible={this.state.fullscreenVisible}
+                forceUpdate={this.forceUpdate}/>
             </section>
         }
     }
