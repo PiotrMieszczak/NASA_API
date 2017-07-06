@@ -9,6 +9,7 @@ import { Router,
 } from 'react-router';
 import MainTemplate from './MainTemplate.jsx';
 import Home from './Home.jsx';
+import Spinner from './Spinner.jsx';
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -16,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function(){
         render(){
 
             return <Router history={hashHistory}>
-                <Route path="/" component={MainTemplate}>
-                <IndexRoute component={Home}/>
+                    <Route path="/" component={MainTemplate}>
+                    <IndexRoute component={Home}/>
+                    <Route path="/mars" component={Spinner}></Route>
                 </Route>
             </Router>
 

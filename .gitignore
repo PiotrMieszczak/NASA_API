@@ -1,6 +1,3 @@
 node_modules
 webpack.config.js
 package-lock.json
-dist/main.css~
-dist/app.js.map
-dist/main.css.map

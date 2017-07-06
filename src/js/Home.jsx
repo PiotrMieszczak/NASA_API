@@ -28,9 +28,14 @@ class Home extends React.Component{
             })
         });
     }
+
+    componentWillMount(){
+        this.setState({
+            intro: true,
+        })
+    }
     componentDidMount(){ //get pictures from NASA API
-        console.log(this.state.loaded);
-        
+
         const keyAPI ='LmHn5nJJ09HXRJWeindWjB144LHLIUAubdGKQ4w8';
         let datesArray = []; //get 6 random dates for gallery
         let urlsArray = []; //get 6 diffrent urls
