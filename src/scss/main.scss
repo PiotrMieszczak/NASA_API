@@ -1,5 +1,8 @@
 @import 'reset';
 
+.hidden{
+    display:none;
+}
 canvas{
     background-color: black;
     position: absolute;
@@ -49,11 +52,13 @@ section#home{
 .nasaGallery{
     justify-content: space-around;
     flex-wrap: wrap;
-    display: none;
+    display: flex;
+
 
     img{
         width: 30vw;
         height: 40vh;
+        border-radius: 10%;
     }
     span{
         color: white;
@@ -73,6 +78,7 @@ section#home{
     margin: 0 auto;
     width: 90vw;
     height: 80vh;
+    border-radius: 10%;
 }
 //NAV
 nav{
