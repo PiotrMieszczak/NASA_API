@@ -97,7 +97,6 @@ class Home extends React.Component{
                 src={this.state.src} 
                 visible={this.state.fullscreenVisible}
                 forceUpdate={this.forceUpdate}/>
-                
             </section>
         }
     }
