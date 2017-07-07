@@ -62,7 +62,7 @@ class Home extends React.Component{
             fullscreenVisible: false,
         })
     }
-    handleHideGallery = ()=>{
+    handleHideGallery = ()=>{ //hide gallery/show logo event
         this.setState({
             intro: true,
             fullscreenVisible: false,

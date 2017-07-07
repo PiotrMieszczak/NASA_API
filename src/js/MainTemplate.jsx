@@ -15,10 +15,10 @@ class MainTemplate extends React.Component{
                                         <IndexLink to="/">Home</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/iss">ISS</IndexLink>
+                                        <IndexLink to="/iss">ISS Live Stream</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/mars">EPIC gallery</IndexLink>
+                                        <IndexLink to="/mars">spinner test</IndexLink>
                                     </li>
                                     <li>
                                         <IndexLink to="/tnyt">tnyt space news</IndexLink>
