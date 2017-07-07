@@ -10,8 +10,8 @@ class Home extends React.Component{
                 loaded: false,
                 response: [],
                 src: false,
-                fullscreenVisible: false,
-                intro: true,
+                fullscreenVisible: false, //gallery visibility 
+                intro: true, //logo visibility
             }
     }
 
@@ -62,6 +62,12 @@ class Home extends React.Component{
             fullscreenVisible: false,
         })
     }
+    handleHideGallery = ()=>{
+        this.setState({
+            intro: true,
+            fullscreenVisible: false,
+        })
+    }
     render(){
 
         const galleryAPOD = [...this.state.response].map( singleResponse=>{ 
@@ -81,12 +87,17 @@ class Home extends React.Component{
                 src="images/NASA_logo.svg" alt="nasa_logo"/>
                 <ul className={(!this.state.fullscreenVisible && !this.state.intro)?'nasaGallery':'hidden'}>
                     {galleryAPOD}
+                    <div id="closeGallery">
+                        <button onClick={this.handleHideGallery}
+                        >Close Gallery</button>
+                    </div>
                 </ul> 
                 <Fullscreen 
                 hide={this.handleCloseFullscreen}
                 src={this.state.src} 
                 visible={this.state.fullscreenVisible}
                 forceUpdate={this.forceUpdate}/>
+                
             </section>
         }
     }

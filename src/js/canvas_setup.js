@@ -6,6 +6,7 @@ const ctx = canvas.getContext('2d');
 window.addEventListener('resize', ()=>{
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    
 });
 
 export {ctx};
