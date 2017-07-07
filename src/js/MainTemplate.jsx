@@ -21,7 +21,7 @@ class MainTemplate extends React.Component{
                                         <IndexLink to="/mars">spinner test</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/tnyt">tnyt space news</IndexLink>
+                                        <IndexLink to="/tnyt">news</IndexLink>
                                     </li>
                                 </ul>
                             </nav>
