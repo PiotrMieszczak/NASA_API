@@ -194,6 +194,63 @@ input[type=button] {
   display: block;
   clear: both; }
 
+#spinnerSection {
+  height: 80vh;
+  width: 100vw;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; }
+
+.main_spinner {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: rotate 1s infinite; }
+
+.dot1 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50px;
+  left: 50px;
+  border: 1px solid orange;
+  background-color: orange;
+  border-radius: 50%;
+  animation: bounce 2s infinite; }
+
+.dot2 {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  top: 50px;
+  left: 70px;
+  border: 1px solid orangered;
+  border-radius: 50%;
+  background-color: orangered;
+  animation: bounce 2s infinite;
+  animation-delay: -1s; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes bounce {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0); } }
+
+body, html {
+  overflow: hidden; }
+
 canvas {
   background-color: black;
   position: absolute;
@@ -210,40 +267,84 @@ footer {
   left: 0;
   bottom: 0; }
 
-section#home {
-  height: 80vh;
-  z-index: 9999;
+.nasaGallery {
+  justify-content: space-around;
+  flex-wrap: wrap;
   display: flex; }
+  .nasaGallery img {
+    width: 30vw;
+    height: 40vh;
+    border-radius: 10%; }
+  .nasaGallery span {
+    color: white; }
+  .nasaGallery #closeGallery {
+    width: 30vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; }
 
-section#home div {
-  background-image: url("/src/images/nasalogo.png");
-  background-repeat: no-repeat;
-  border: 1px solid red;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  z-index: 1;
-  color: white;
-  margin: auto; }
+.fullScreen {
+  height: 80vh;
+  width: 100vw;
+  z-index: 999999;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.fullScreen img {
+  display: block;
+  margin: 0 auto;
+  width: 60vw;
+  height: 80vh;
+  border-radius: 10%; }
 
 nav {
   float: right;
   width: 50vw; }
-
-nav ul {
-  display: flex;
-  align-content: flex-end; }
+  nav ul {
+    display: flex;
+    align-content: flex-end;
+    justify-content: space-between; }
 
 #navigation li {
   margin-right: 1vw; }
-
-#navigation li:last-of-type {
-  margin-right: 0; }
 
 #navigation a {
   font-size: 3vh;
   text-decoration: none;
   text-transform: uppercase;
   color: white; }
+
+section#home {
+  height: 90vh;
+  width: 100vw;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; }
+  section#home #nasaLogo {
+    animation-name: pulse;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  30% {
+    transform: scale(1.05); }
+  50% {
+    transform: scale(1); }
+  70% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+
+iframe {
+  width: 70vw;
+  height: 80vh; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map*/
