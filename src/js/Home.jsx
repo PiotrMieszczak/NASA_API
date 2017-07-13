@@ -77,7 +77,7 @@ class Home extends React.Component{
                     </li>
         })
 
-        if(!this.state.loaded){ //if didn't get response from NASA API, don't render anything
+        if(!this.state.loaded){ //if didn't get response from NASA API, render spinner
             return <Spinner />
         }else{
 
