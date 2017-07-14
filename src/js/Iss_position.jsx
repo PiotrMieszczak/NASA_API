@@ -25,28 +25,39 @@ import Spinner from './Spinner.jsx';
                  })
             });
                 marker.setLatLng([this.state.latitude, this.state.longitude]);
-                map.panTo([this.state.latitude, this.state.longitude])
+               // map.panTo([this.state.latitude, this.state.longitude])
         }
 
         componentDidMount(){
             const url = "http://api.open-notify.org/iss-now.json";
             
+
              let map = this.map = L.map(ReactDOM.findDOMNode(this), {
                 zoom:13,
-                minZoom: 2,
-                maxZoom: 6,
+                // minZoom: 2,
+                // maxZoom: 6,
                 layers: [
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                    id: 'mapbox.comic',
+                    id: 'mapbox.outdoors',
                     accessToken: 'pk.eyJ1Ijoiemx5Z29zYyIsImEiOiJjajRvbHlyazgwY28zMnFwbXN1OGIxNXRzIn0.maCDdR1AhjL0drrVIc7mkQ'})
                 ],
             });
+            let myIcon = L.icon({
+                iconUrl: 'images/iss.svg',
+                iconSize: [50, 50],
+                iconAnchor: [22, 94],
+                popupAnchor: [-3, -76],
+            });
 
-            let marker = L.marker([this.state.latitude, this.state.longitude]).addTo(map);
-        
-            this.getPossition(url,marker,map)
+            navigator.geolocation.getCurrentPosition(function(location) {
+                    let marker = L.marker([location.coords.latitude, location.coords.longitude]).addTo(map);
+            });
+           
+            let iss_marker = L.marker([this.state.latitude, this.state.longitude],{icon: myIcon}).addTo(map);
+            
+            this.getPossition(url,iss_marker,map)
             this.intervalId = setInterval( ()=>{
-                this.getPossition(url,marker,map)
+                this.getPossition(url,iss_marker,map)
             },2000);
 
             map.fitWorld();
@@ -60,6 +71,7 @@ import Spinner from './Spinner.jsx';
         
         render(){
                 return <div id="map"></div>
+                
         }
     }
 
