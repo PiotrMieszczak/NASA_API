@@ -11,6 +11,7 @@ import MainTemplate from './MainTemplate.jsx';
 import Home from './Home.jsx';
 import Spinner from './Spinner.jsx';
 import ISS from './Iss.jsx';
+import News from './News.jsx';
 
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         <IndexRoute component={Home}/>
                         <Route path="/mars" component={Spinner}></Route>
                         <Route path="/iss" component={ISS}></Route>
+                        <Route path="/news" component={News}></Route>
                 </Route>
             </Router>
 

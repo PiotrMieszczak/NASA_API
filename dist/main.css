@@ -289,13 +289,23 @@ footer {
   z-index: 999999;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.4); }
-
-.fullScreen img {
-  display: block;
-  margin: 0 auto;
-  width: 60vw;
-  height: 80vh;
-  border-radius: 10%; }
+  .fullScreen img {
+    display: block;
+    margin: 0 auto;
+    width: 60vw;
+    height: 80vh;
+    border-radius: 10%;
+    position: relative; }
+  .fullScreen span {
+    color: white;
+    position: absolute;
+    font-size: 6vh; }
+  .fullScreen .next {
+    top: 50vh;
+    right: 20vh; }
+  .fullScreen .prev {
+    top: 50vh;
+    left: 20vh; }
 
 nav {
   float: right;

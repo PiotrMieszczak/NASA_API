@@ -18,10 +18,11 @@ class MainTemplate extends React.Component{
                                         <IndexLink to="/iss">ISS Live Stream</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/mars">spinner test</IndexLink>
+                                        <IndexLink to="/mars"
+                                        >spinner test</IndexLink>
                                     </li>
                                     <li>
-                                        <IndexLink to="/tnyt">news</IndexLink>
+                                        <IndexLink to="/news">news</IndexLink>
                                     </li>
                                 </ul>
                             </nav>
