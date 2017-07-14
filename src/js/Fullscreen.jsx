@@ -13,7 +13,7 @@ class Fullscreen extends React.Component{
          let index = this.props.index;
          index--;
 
-         if(index < 0){
+         if(index < 0){ //loop gallery
             index = this.props.gallery.length-1;
         }
 
@@ -26,7 +26,7 @@ class Fullscreen extends React.Component{
          let index = this.props.index;
          index++;
 
-        if(index > this.props.gallery.length-1){
+        if(index > this.props.gallery.length-1){ //loop gallery
             index = 0;
         }
 
@@ -44,9 +44,9 @@ class Fullscreen extends React.Component{
                 onClick={this.checkFullscreen}
                 src={this.props.src}/>}
                 <span className="prev"
-                onClick={this.handleSliderPrev}>prev</span>
+                onClick={this.handleSliderPrev}>{'<'}</span>
                 <span className="next"
-                 onClick={this.handleSliderNext}>next</span>
+                 onClick={this.handleSliderNext}>{'>'}</span>
         </div>
     }
 }

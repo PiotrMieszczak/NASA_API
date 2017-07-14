@@ -44,7 +44,6 @@ class Home extends React.Component{
     }
     //EVENTS
     handleChangeBg=(e)=>{
-            // e.target.style.display= 'none'; //hide button
             const nasaGallery = document.querySelector('.nasaGallery');
             
             this.setState({
@@ -52,7 +51,6 @@ class Home extends React.Component{
             })
     }   
     handleFullscreen=(src,index)=>{ //display clicked photo in fullscreen
-        console.log(src)
         this.setState({
             src: src,
             fullscreenVisible: true,

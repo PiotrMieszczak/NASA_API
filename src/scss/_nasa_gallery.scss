@@ -33,9 +33,22 @@
         width: 60vw;
         height: 80vh;
         border-radius: 10%;
+        position: relative;
     }   
 
     span{
         color: white;
+        position: absolute;
+        font-size: 6vh;
+    }
+
+    .next{
+        top: 50vh;
+        right: 20vh;
+    }
+
+    .prev{
+        top: 50vh;
+        left: 20vh;
     }
 }
