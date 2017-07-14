@@ -12,6 +12,7 @@ class Home extends React.Component{
                 src: false,
                 fullscreenVisible: false, //gallery visibility 
                 intro: true, //logo visibility
+                index: 0,
             }
     }
 
@@ -50,10 +51,12 @@ class Home extends React.Component{
                 intro: false,
             })
     }   
-    handleFullscreen=(src)=>{ //display clicked photo in fullscreen
+    handleFullscreen=(src,index)=>{ //display clicked photo in fullscreen
+        console.log(src)
         this.setState({
             src: src,
             fullscreenVisible: true,
+            index: index,
         })
     }
     handleCloseFullscreen = ()=>{
@@ -70,13 +73,12 @@ class Home extends React.Component{
     }
     render(){
 
-        const galleryAPOD = [...this.state.response].map( singleResponse=>{ 
+        const galleryAPOD = [...this.state.response].map( (singleResponse,index)=>{ 
             return <li key={singleResponse.date}>
                         <img 
-                        onClick={e=>this.handleFullscreen(singleResponse.url)}src={singleResponse.url} alt="random_nasaPic"/>
+                        onClick={e=>this.handleFullscreen(singleResponse.url,index)} src={singleResponse.url} alt="random_nasaPic"/>
                     </li>
         })
-
         if(!this.state.loaded){ //if didn't get response from NASA API, render spinner
             return <Spinner />
         }else{
@@ -88,20 +90,21 @@ class Home extends React.Component{
                 <ul className={(!this.state.fullscreenVisible && !this.state.intro)?'nasaGallery':'hidden'}>
                     {galleryAPOD}
                     <div id="closeGallery">
-                        <button onClick={this.handleHideGallery}
-                        >Close Gallery</button>
+                        <button 
+                        onClick={this.handleHideGallery}>Close Gallery</button>
                     </div>
                 </ul> 
                 <Fullscreen 
                 hide={this.handleCloseFullscreen}
-                src={this.state.src} 
+                src={this.state.src}
+                gallery={galleryAPOD}
+                slider={this.handleFullscreen}
+                index={this.state.index}
                 visible={this.state.fullscreenVisible}
                 forceUpdate={this.forceUpdate}/>
             </section>
         }
     }
-    
-
 }
 
 module.exports = Home;
