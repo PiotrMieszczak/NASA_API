@@ -71,8 +71,8 @@ function CreateStars(number){
         let radius = Math.random()*2;
         let x = Math.random()*(window.innerWidth-radius*2)+radius;
         let y = Math.random()*(window.innerHeight-radius*2)+radius;
-        let dx = (Math.random()-0.5)*0.8;
-        let dy = (Math.random()-0.5)*0.8;
+        let dx = (Math.random()-0.5)*0.9;
+        let dy = (Math.random()-0.5)*0.9;
         StarArray.push(new Star(x,y,dx,dy,radius))
     }
     return StarArray; 

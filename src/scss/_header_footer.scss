@@ -1,9 +1,25 @@
 header, footer{
     height: 10vh;
     z-index: 1;
+
 }
 footer{
     position: absolute;
     left:0;
     bottom:0;
+}
+
+header{
+    #navigation{
+        li{
+            margin-right: 1vw;
+        }
+        a{
+            font-size: 3vh;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 700;  
+        }
+    }
 }
