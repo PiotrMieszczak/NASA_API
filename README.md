@@ -1,4 +1,4 @@
-React web application still in progress. 
+React web application - still in progress. 
 
 Preview link https://piotrmieszczak.github.io/SPACE_API/
 
