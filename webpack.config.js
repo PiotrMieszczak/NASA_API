@@ -28,7 +28,15 @@ module.exports = {
                 fallback: 'style-loader',
                 use: ['css-loader', 'sass-loader']
                 })
-            }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file?name=fonts/[name].[ext]'
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: 'url-loader?limit=1000000'
+            },
         ]
     },
     plugins: [

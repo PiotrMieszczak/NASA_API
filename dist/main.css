@@ -354,7 +354,23 @@ iframe {
   width: 70vw;
   height: 80vh; }
 
+#map {
+  height: 50vh;
+  width: 40vw;
+  align-self: center; }
+
+#iss_info {
+  height: 80vh;
+  width: 40vw;
+  border: 1px solid red;
+  align-self: flex-start;
+  background-color: white;
+  opacity: 0.3; }
+
 .hidden {
   display: none; }
+
+* {
+  font-family: 'Gruppo', cursive; }
 
 /*# sourceMappingURL=main.css.map*/
