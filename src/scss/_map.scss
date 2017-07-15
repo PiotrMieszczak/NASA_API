@@ -1,7 +1,12 @@
 #map{
     height: 50vh;
-    width: 50vw;
+    width: 40vw;
+    align-self: center;
+}
 
-    margin: 0 auto;
-    margin-top:20vh;
+#iss_info{
+         height: 80vh;
+         width: 40vw;
+         border: 1px solid red;
+         align-self: flex-start;
 }
