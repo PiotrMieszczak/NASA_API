@@ -30,7 +30,6 @@ class Map extends React.Component{
         componentDidMount(){
 
             const url = "http://api.open-notify.org/iss-now.json";
-            console.log(ReactDOM.findDOMNode(this))
              let map = this.map = L.map('map', {
                 zoom:13,
                 minZoom: 2,

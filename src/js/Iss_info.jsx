@@ -2,9 +2,9 @@ import React from 'react';
 
  class Iss_position extends React.Component{
     render(){
-     return <section id="iss_info">
-                <h1>TEST</h1>
-                <img src="images/iss_2011" alt="iss_photo"/>
+     return <section id="iss_info" className="clearfix">
+                <h1>The International Space Station</h1>
+                <img src="images/ISS_2011.svg" alt="iss_photo"/>
                 <article>
                     <p>The International Space Station is a large spacecraft. It orbits around Earth. It is a home where astronauts live.
                     The space station is also a science lab. Many countries worked together to build it. They also work together to use it.
