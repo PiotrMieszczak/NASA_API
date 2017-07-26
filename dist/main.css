@@ -267,6 +267,16 @@ footer {
   left: 0;
   bottom: 0; }
 
+header #navigation li {
+  margin-right: 1vw; }
+
+header #navigation a {
+  font-size: 3vh;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700; }
+
 .nasaGallery {
   justify-content: space-around;
   flex-wrap: wrap;
@@ -274,7 +284,8 @@ footer {
   .nasaGallery img {
     width: 30vw;
     height: 40vh;
-    border-radius: 10%; }
+    border-radius: 10%;
+    margin-bottom: 1vh; }
   .nasaGallery span {
     color: white; }
   .nasaGallery #closeGallery {
@@ -308,21 +319,12 @@ footer {
     left: 20vh; }
 
 nav {
-  float: right;
+  margin: 0 auto;
   width: 50vw; }
   nav ul {
     display: flex;
     align-content: flex-end;
     justify-content: space-between; }
-
-#navigation li {
-  margin-right: 1vw; }
-
-#navigation a {
-  font-size: 3vh;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white; }
 
 section#home {
   height: 90vh;
@@ -360,12 +362,27 @@ iframe {
   align-self: center; }
 
 #iss_info {
-  height: 80vh;
   width: 40vw;
-  border: 1px solid red;
   align-self: flex-start;
   background-color: white;
-  opacity: 0.3; }
+  margin-right: 1vw;
+  padding: 0.5vw; }
+  #iss_info h1 {
+    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 1vh;
+    font-weight: bold; }
+  #iss_info img {
+    float: right;
+    width: 25vw;
+    height: 25vh; }
+  #iss_info p {
+    margin-bottom: 1vh;
+    font-size: 2vh; }
+  #iss_info h2 {
+    font-size: 3vh;
+    margin-bottom: 1vh;
+    font-weight: bold; }
 
 .hidden {
   display: none; }

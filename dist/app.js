@@ -28145,8 +28145,8 @@ function CreateStars(number){
         let radius = Math.random()*2;
         let x = Math.random()*(window.innerWidth-radius*2)+radius;
         let y = Math.random()*(window.innerHeight-radius*2)+radius;
-        let dx = (Math.random()-0.5)*0.8;
-        let dy = (Math.random()-0.5)*0.8;
+        let dx = (Math.random()-0.5)*0.9;
+        let dy = (Math.random()-0.5)*0.9;
         StarArray.push(new Star(x,y,dx,dy,radius))
     }
     return StarArray; 
@@ -28468,13 +28468,12 @@ var ISS = function (_React$Component) {
     }
 
     _createClass(ISS, [{
-        key: 'render',
+        key: "render",
         value: function render() {
-            console.log('test');
             return _react2.default.createElement(
-                'section',
-                { id: 'home' },
-                _react2.default.createElement('iframe', {
+                "section",
+                { id: "home" },
+                _react2.default.createElement("iframe", {
                     src: "https://www.youtube.com/embed/RtU_mdL2vBM" //embed endpoint allows outside requests, /watch doesn't
                     , frameBorder: "0",
                     scrolling: "no",
@@ -28610,7 +28609,6 @@ var Map = function (_React$Component) {
             var _this3 = this;
 
             var url = "http://api.open-notify.org/iss-now.json";
-            console.log(_reactDom2.default.findDOMNode(this));
             var map = this.map = L.map('map', {
                 zoom: 13,
                 minZoom: 2,
@@ -28690,20 +28688,24 @@ var Iss_position = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 "section",
-                { id: "iss_info" },
+                { id: "iss_info", className: "clearfix" },
                 _react2.default.createElement(
                     "h1",
                     null,
-                    "TEST"
+                    "The International Space Station"
                 ),
-                _react2.default.createElement("img", { src: "images/iss_2011", alt: "iss_photo" }),
+                _react2.default.createElement("img", { src: "images/ISS_2011.svg", alt: "iss_photo" }),
                 _react2.default.createElement(
                     "article",
                     null,
                     _react2.default.createElement(
                         "p",
                         null,
-                        "The International Space Station is a large spacecraft. It orbits around Earth. It is a home where astronauts live. The space station is also a science lab. Many countries worked together to build it. They also work together to use it. The space station is made of many pieces. The pieces were put together in space by astronauts. The space station's orbit is about 220 miles above Earth. NASA uses the station to learn about living and working in space. These lessons will help NASA explore space."
+                        "The International Space Station is a large spacecraft. ",
+                        _react2.default.createElement("br", null),
+                        "It orbits around Earth. It is a home where astronauts live. The space station is also a science lab. Many countries worked together to build it. They also work together to use it. The space station is made of many pieces. The pieces were put together in space by astronauts. The space station's orbit is about 220 miles above Earth. NASA uses the station to learn about living and working in space.",
+                        _react2.default.createElement("br", null),
+                        "These lessons will help NASA explore space."
                     ),
                     _react2.default.createElement(
                         "h2",
@@ -28723,7 +28725,13 @@ var Iss_position = function (_React$Component) {
                     _react2.default.createElement(
                         "p",
                         null,
-                        "The space station is a home in orbit. People have lived in space every day since the year 2000. The space station's labs are where crew members do research. This research could not be done on Earth. Scientists study what happens to people when they live in space. NASA has learned how to keep a spacecraft working for a long time. These lessons will be important in the future.NASA has a plan to send humans deeper into space than ever before. The space station is one of the first steps. NASA will use lessons from the space station to get astronauts ready for the journey ahead."
+                        "The space station is a home in orbit. People have lived in space every day since the year 2000. The space station's labs are where crew members do research. ",
+                        _react2.default.createElement("br", null),
+                        "This research could not be done on Earth. Scientists study what happens to people when they live in space. NASA has learned how to keep a spacecraft working for a long time. These lessons will be important in the future.",
+                        _react2.default.createElement("br", null),
+                        "NASA has a plan to send humans deeper into space than ever before. The space station is one of the first steps.",
+                        _react2.default.createElement("br", null),
+                        "NASA will use lessons from the space station to get astronauts ready for the journey ahead."
                     )
                 )
             );
